@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @list.user_id %>
+</p>
+
+<p>
+  <strong>Store name:</strong>
+  <%= @list.store_name %>
+</p>
+
+<p>
+  <strong>Menu:</strong>
+  <%= @list.menu %>
+</p>
+
+<p>
+  <strong>Point:</strong>
+  <%= @list.point %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @list.content %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @list.photo %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @list.location %>
+</p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
