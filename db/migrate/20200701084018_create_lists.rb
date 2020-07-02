@@ -6,7 +6,7 @@ class CreateLists < ActiveRecord::Migration[5.2]
       t.string :menu
       t.string :point
       t.string :content
-      t.string :photo
+      t.string :image
       t.string :location
 
       t.timestamps

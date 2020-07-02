@@ -1,37 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザーID</strong>
   <%= @list.user_id %>
 </p>
 
 <p>
-  <strong>Store name:</strong>
+  <strong>店名:</strong>
   <%= @list.store_name %>
 </p>
 
 <p>
-  <strong>Menu:</strong>
+  <strong>メニュー:</strong>
   <%= @list.menu %>
 </p>
 
 <p>
-  <strong>Point:</strong>
+  <strong>評価:</strong>
   <%= @list.point %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>説明:</strong>
   <%= @list.content %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @list.photo %>
+  <strong>写真:</strong>
+  <%= image_tag @list.image.url if @list.image? %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>場所:</strong>
   <%= @list.location %>
 </p>
 
