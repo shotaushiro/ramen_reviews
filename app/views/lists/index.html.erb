@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>ラーメン店　口コミ一覧</h1>
-
+<h2>ラーメン店　口コミ一覧</h2>
+<u>
+<%= link_to '新規作成', new_list_path %>
+</u>
 <table>
   <thead>
     <tr>
@@ -34,7 +36,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New List', new_list_path %>
