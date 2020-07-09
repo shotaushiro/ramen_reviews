@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
-  #before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /lists
   # GET /lists.json
@@ -12,11 +12,12 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @user = User.find_by(id: @list.user_id)
   end
 
   # GET /lists/new
   def new
-    @list = List.new
+    @list = current_user.lists.build()
   end
 
   # GET /lists/1/edit
@@ -26,7 +27,8 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.build(list_params)
+    #@list = List.new(list_params)
 
     respond_to do |format|
       if @list.save
@@ -74,6 +76,7 @@ class ListsController < ApplicationController
       params.require(:list).permit(:store_name, :menu, :point, :content, :image, :location)
     end
 
+    
     def correct_user
       @list = current_user.lists.find_by(id: params[:id])
       unless @list

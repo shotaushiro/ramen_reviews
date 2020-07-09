@@ -2,9 +2,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
+      <br>
       <%= image_tag @list.image.to_s,{ width: 530, height: 370 } %>
     </div>
     <div class="offset-md-1 col-md-5 text-left">
+      
+      <p>
+        <h5>投稿者 : <%= @user.name %></h5>
+      </p>
+      <br>
       <p>
         <h5>店名 : <%= @list.store_name %></h5>
       </p>
@@ -25,9 +31,9 @@
         <h5>場所 : <%= @list.location %></h5>
       </p>
       <br>
-      <u>
         <h6 class="text-right">
-          <%= link_to '戻る', lists_path %>
+          <u><%= link_to '編集', edit_list_path(@list) %></u>　
+          <u><%= link_to '戻る', lists_path %></u>
         </h6>
       </u>
     </div>

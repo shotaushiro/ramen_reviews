@@ -2,13 +2,13 @@
   <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 100 }) %>" alt="">
   <br>
   <br>
-  <h5><%= @user.name %></h5>
+  <h5>ユーザー名 : <%= @user.name %></h5>
 </div>
   <br>
   <br>
 <div class="container">
   <div class="row">
-    <% @lists.each do |list| %>
+    <% @user.lists.each do |list| %>
     <div class="col-xl-4 col-md-6">
       <br>
       <div><%= image_tag list.image.to_s,{ width: 240, height: 160 } %></div>
