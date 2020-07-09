@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
+  #before_action :correct_user, only: [:edit, :update, :destroy]
+
   # GET /lists
   # GET /lists.json
   def index
@@ -69,6 +71,13 @@ class ListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:user_id, :store_name, :menu, :point, :content, :image, :location)
+      params.require(:list).permit(:store_name, :menu, :point, :content, :image, :location)
+    end
+
+    def correct_user
+      @list = current_user.lists.find_by(id: params[:id])
+      unless @list
+        redirect_to root_url
+      end
     end
 end

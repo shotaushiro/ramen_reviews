@@ -1,38 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h2>ラーメン店　口コミ一覧</h2>
-<u>
-<%= link_to '新規作成', new_list_path %>
-</u>
-<table>
-  <thead>
-    <tr>
-      <th>ユーザーID</th>
-      <th>店名</th>
-      <th>メニュー</th>
-      <th>評価</th>
-      <th>説明</th>
-      <th>写真</th>
-      <th>場所</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.user_id %></td>
-        <td><%#= @users.name %></td>
-        <td><%= list.store_name %></td>
-        <td><%= list.menu %></td>
-        <td><%= list.point %></td>
-        <td><%= list.content %></td>
-        <td><%= image_tag list.image.to_s %></td>
-        <td><%= list.location %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <h2>ラーメン店　口コミ一覧</h2>
+    <br>
+    <u><h5 class="text-right"><%= link_to '新規作成', new_list_path %></h5></u>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <% @lists.each do |list| %>
+        <div class="col-xl-4 col-md-6">
+          <br>
+          <div><%= image_tag list.image.to_s,{ width: 320, height: 240 } %></div>
+          <br>
+          <br>
+          <h5>店名 ：　<%= list.store_name %></h5>
+          <h5>評価 ：　<%= list.point %></5>
+          <br>
+          <br>
+          <div class="d-flex justify-content-start">
+            <u><h6><%= link_to '詳細を見る', list %></h6></u>　<u><h6><%= link_to '編集', edit_list_path(list) %></h6></u>　<u><h6><%= link_to '削除', list, method: :delete, data: { confirm: 'Are you sure?' } %></h6></u>
+        　</div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    

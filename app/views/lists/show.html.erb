@@ -1,39 +1,35 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>ユーザーID</strong>
-  <%= @list.user_id %>
-</p>
-
-<p>
-  <strong>店名:</strong>
-  <%= @list.store_name %>
-</p>
-
-<p>
-  <strong>メニュー:</strong>
-  <%= @list.menu %>
-</p>
-
-<p>
-  <strong>評価:</strong>
-  <%= @list.point %>
-</p>
-
-<p>
-  <strong>説明:</strong>
-  <%= @list.content %>
-</p>
-
-<p>
-  <strong>写真:</strong>
-  <%= image_tag @list.image.url if @list.image? %>
-</p>
-
-<p>
-  <strong>場所:</strong>
-  <%= @list.location %>
-</p>
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @list.image.to_s,{ width: 530, height: 370 } %>
+    </div>
+    <div class="offset-md-1 col-md-5 text-left">
+      <p>
+        <h5>店名 : <%= @list.store_name %></h5>
+      </p>
+      <br>
+      <p>
+        <h5>メニュー : <%= @list.menu %></h5>
+      </p>
+      <br>
+      <p>
+        <h5>評価 : <%= @list.point %></h5>
+      </p>
+      <br>
+      <p>
+        <h5>説明 : <%= @list.content %></h5>
+      </p>
+      <br>
+      <p>
+        <h5>場所 : <%= @list.location %></h5>
+      </p>
+      <br>
+      <u>
+        <h6 class="text-right">
+          <%= link_to '戻る', lists_path %>
+        </h6>
+      </u>
+    </div>
+  </div>
+</div>

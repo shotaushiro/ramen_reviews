@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2020_07_02_051336) do
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
     t.string "store_name"
     t.string "menu"
     t.string "point"
