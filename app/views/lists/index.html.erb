@@ -18,8 +18,12 @@
           <br>
           <br>
           <div class="d-flex justify-content-start">
-            <u><h6><%= link_to '詳細を見る', list %></h6></u>　<u><h6><%= link_to '編集', edit_list_path(list) %></h6></u>　<u><h6><%= link_to '削除', list, method: :delete, data: { confirm: 'Are you sure?' } %></h6></u>
-        　</div>
+            <u><h6><%= link_to '詳細を見る', list %></h6></u>　
+            <% if list.user == current_user %>
+            <u><h6><%= link_to '編集', edit_list_path(list) %></h6></u>　
+            <u><h6><%= link_to '削除', list, method: :delete, data: { confirm: 'Are you sure?' } %></h6></u>
+            <% end %>
+          </div>
         </div>
         <% end %>
       </div>

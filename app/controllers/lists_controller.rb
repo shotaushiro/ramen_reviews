@@ -2,7 +2,6 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
   before_action :correct_user, only: [:edit, :update, :destroy]
-
   # GET /lists
   # GET /lists.json
   def index
@@ -22,6 +21,7 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
+    @list = List.find_by(id: params[:id])
   end
 
   # POST /lists

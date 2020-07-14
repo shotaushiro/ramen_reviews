@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      list: リスト
+      user: ユーザー
+    attributes:
+      list:
+        store_name: 店名
+        menu: メニュー
+        content: 詳細
+        location: 場所
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
