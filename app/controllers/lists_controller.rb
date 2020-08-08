@@ -2,34 +2,27 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
   before_action :correct_user, only: [:edit, :update, :destroy]
-  # GET /lists
-  # GET /lists.json
+  
   def index
     @lists = List.all
   end
 
-  # GET /lists/1
-  # GET /lists/1.json
+  
   def show
     @user = User.find_by(id: @list.user_id)
   end
 
-  # GET /lists/new
   def new
     @list = current_user.lists.build()
   end
 
-  # GET /lists/1/edit
   def edit
     @list = List.find_by(id: params[:id])
   end
 
-  # POST /lists
-  # POST /lists.json
+
   def create
     @list = current_user.lists.build(list_params)
-    #@list = List.new(list_params)
-
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -41,8 +34,6 @@ class ListsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lists/1
-  # PATCH/PUT /lists/1.json
   def update
     respond_to do |format|
       if @list.update(list_params)
@@ -55,8 +46,7 @@ class ListsController < ApplicationController
     end
   end
 
-  # DELETE /lists/1
-  # DELETE /lists/1.json
+
   def destroy
     @list.destroy
     respond_to do |format|
@@ -66,12 +56,10 @@ class ListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_list
       @list = List.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def list_params
       params.require(:list).permit(:store_name, :menu, :point, :content, :image, :location)
     end

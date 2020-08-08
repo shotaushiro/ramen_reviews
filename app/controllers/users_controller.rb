@@ -6,10 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@list = List.all
-    #@lists = List.find(params[:id])
-    #@lists = current_user.lists.order(id: :desc).page(params[:page])
-    #@list = List.find_by(id: @user.user_id)
+    
   end
   
   def new
