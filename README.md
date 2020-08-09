@@ -1,24 +1,35 @@
-# README
+### アプリURL
+[ラーメン口コミアプリはこちらからどうぞ](https://powerful-hollows-12845.herokuapp.com/login)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Email : test@1.com  
+Password : test
 
-Things you may want to cover:
+こちらでログインできます
+***
+### 概要
+長期インターン用のポートフォリオとして、簡単な機能を実装したラーメン口コミサイトを作成しました。
+***
+### バージョン
+Ruby 2.4.5  
+Rails 5.2.2
+***
+### 実装機能
 
-* Ruby version
+#### 記事関連
+・一覧記事機能(フォローした人と自分の記事)  
+・削除機能  
+・詳細機能  
+・編集機能  
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### ユーザー関連
+・登録機能  
+・ログイン、ログアウト機能  
+・一覧機能  
+・詳細機能  
+***
+### その他
+・Cloud9で作成  
+・Bootstrapでデザイン  
+・Mysqlによるデータ管理  
+・herokuにデプロイ
