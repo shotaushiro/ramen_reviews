@@ -1,6 +1,6 @@
 ### アプリURL
-[ラーメン口コミアプリはこちらからどうぞ](https://powerful-hollows-12845.herokuapp.com/login)
-※herokuにデプロイしているため、時間が経つと投稿した画像が表示されなくなります。
+[ラーメン口コミアプリはこちらからどうぞ](https://powerful-hollows-12845.herokuapp.com/login)  
+※ herokuにデプロイしているため、時間が経つと投稿した画像が表示されなくなります。
 
 Email : test@1.com  
 Password : test
